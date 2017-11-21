@@ -1,14 +1,16 @@
-
 package model;
 
 public abstract class Producto {
-    
-    protected int codigo; 
+
+    protected int codigo;
     protected float precio;
     protected String descripcion;
-    
-    
-    public Producto(){
+
+    public Producto(int codigo, float precio, String descripcion) {
+        this.codigo = codigo;
+        this.descripcion = descripcion;
+        this.precio = precio;
+
     }
 
     public int getCodigo() {
@@ -34,10 +36,7 @@ public abstract class Producto {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
-    public abstract String [] getInfo();
-    
-    
-    
-    
+
+    public abstract String[] getInfo();
+
 }

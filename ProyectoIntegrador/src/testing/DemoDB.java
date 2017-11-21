@@ -2,6 +2,11 @@ package testing;
 
 import java.sql.SQLException;
 
+/**
+ * Clase de prueba para Conexion.java
+ * 
+ * @author Daniel Estrada
+ */
 public class DemoDB {
 
     public static void main(String[] args) {
@@ -23,7 +28,7 @@ public class DemoDB {
         }
         
         try {
-            c.select();
+            c.select("producto");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

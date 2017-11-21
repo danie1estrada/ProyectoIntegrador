@@ -21,7 +21,7 @@ public class DemoDB {
         }
         
         try {
-            c.insert(new String [] {null, "Perro", "12500"}, "Producto");
+            c.insert(new String [] {null, "'Origin Of Symmetry'", "179.99"}, "Producto");
             System.out.println("Se guardo");
         } catch (SQLException e) {
             System.err.println(e.getMessage());

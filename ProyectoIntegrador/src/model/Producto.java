@@ -10,7 +10,6 @@ public abstract class Producto {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.precio = precio;
-
     }
 
     public int getCodigo() {

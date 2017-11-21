@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
+import model.Producto;
 
 public class Conexion {
     
@@ -76,5 +77,20 @@ public class Conexion {
             }
             System.out.println();
         }
+    }
+    
+    public Producto getProducto(int code) throws SQLException {
+        ResultSet rs = st.executeQuery("SELECT * FROM Producto WHERE ID = " + code);
+        ResultSetMetaData md = rs.getMetaData();
+        
+        int cols = md.getColumnCount();
+        
+        while(rs.next()) {
+            for (int i = 1; i <= cols; i++) {
+                System.out.print(rs.getString(i) + " ");
+            }
+            System.out.println();
+        }
+        return null;
     }
 }

@@ -5,7 +5,7 @@ public class Accesorio extends Producto {
     private String tipo;
     private String material;
 
-    public Accesorio(int codigo, float precio, String descripcion, String tipo, String Material) {
+    public Accesorio(int codigo, float precio, String descripcion, String tipo, String material) {
         super(codigo, precio, descripcion);
         this.tipo = tipo;
         this.material = material;

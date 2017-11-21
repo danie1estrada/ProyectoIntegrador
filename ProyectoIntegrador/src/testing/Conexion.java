@@ -16,7 +16,7 @@ public class Conexion {
     private Statement st;
     
     /**
-     * Crea una conexion con 
+     * Crea una conexion con una base de datos, usuario y contraseña predefinidos.
      */
     public Conexion() {
         url = "jdbc:mysql://localhost:3306/prueba";
@@ -35,9 +35,10 @@ public class Conexion {
     }
     
     /**
+     * Inserta en la base de datos en la tabla especifícada, la información dentro del arreglo.
+     *
      * @param data Arreglo con los datos a almacenar dentro de la base de datos
      * @param table Tabla en la base de datos donde se guardarán los registros
-     * 
      * @throws SQLException 
      */
     public void insert(String [] data, String table) throws SQLException {

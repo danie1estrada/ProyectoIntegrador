@@ -4,6 +4,9 @@ public class Alimento extends Producto {
 
     private String marca;
     private String fechaCad;
+    
+    public Alimento(){
+    }
 
     public Alimento(int codigo, float precio, String descripcion, String marca, String fechaCad) {
         super(codigo, precio, descripcion);

@@ -1,11 +1,11 @@
 package model;
 
-public class Animal extends Producto{
+public abstract class Animal extends Producto{
 
 	private String tamaño;
 	private String color;
 
-	public Animal(int codigo, float precio, String descripcio, 
+	public Animal(int codigo, float precio, String descripcion, 
                      super(codigo, precio, descripcion);
    		     this.tamaño = tamaño;
 		     this.color = color;
@@ -24,5 +24,5 @@ public void setColor(String color){
  }
   @Override
 public String [] getInfo(){
-	return new String []{Integer.toString(codigo), Float.toString(Precio),
+	return new String []{Integer.toString(codigo), Float.toString(precio),
            descripcion, tamaño, color};

@@ -4,11 +4,9 @@ public class Gato extends Animal{
 
 	private String raza;
 
-	public Perro (int codigo, float precio, String descripcion,
-		      super(codigo, precio, descripcion);
-	               this.tamaño = tamaño;
-                       this.color = color;
-                        this.raza = raza;
+	public Perro (int codigo, float precio, String descripcion, String tamaño, String color
+		      super(codigo, precio, descripcion, tamaño, color);
+	              this.raza = raza;
  }
 public String getRaza(){
 	return raza;

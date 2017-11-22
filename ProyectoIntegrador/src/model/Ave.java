@@ -4,11 +4,9 @@ public class Ave extends Animal{
 
 	private String especie;
 
-	public Perro (int codigo, float precio, String descripcion,
-		      super(codigo, precio, descripcion);
-	               this.tamaño = tamaño;
-                       this.color = color;
-                        this.especie = especie;
+	public Perro (int codigo, float precio, String descripcion, String tamaño, String color
+		      super(codigo, precio, descripcion, tamaño, color);
+	              this.especie = especie;
  }
 public String getEspecie(){
 	return especie;

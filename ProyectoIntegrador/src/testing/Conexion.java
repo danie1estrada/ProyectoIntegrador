@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
-import model.Producto;
+import model.*;
 
 public class Conexion {
     
@@ -54,8 +54,6 @@ public class Conexion {
         }
         
         query += ");";
-        
-        System.out.println(query);
         st.execute(query);
     }
     
@@ -79,18 +77,43 @@ public class Conexion {
         }
     }
     
-    public Producto getProducto(int code) throws SQLException {
-        ResultSet rs = st.executeQuery("SELECT * FROM Producto WHERE ID = " + code);
-        ResultSetMetaData md = rs.getMetaData();
+    /**
+     * Retorna un objeto de tipo Producto de acuerdo a los parametros especificados
+     * con la informacion de la base de datos
+     * 
+     * @param code El id del producto
+     * @param table La tabla donde esta registrado en la base de datos.
+     * @return Una instancia de Producto inicializada.
+     * @throws SQLException, Exception 
+     */
+    public Producto getProducto(int code, String table) throws SQLException, Exception {
+        ResultSet rs = st.executeQuery("SELECT * FROM " + table + " WHERE ID = " + code);
+        Producto p = null;
         
-        int cols = md.getColumnCount();
-        
-        while(rs.next()) {
-            for (int i = 1; i <= cols; i++) {
-                System.out.print(rs.getString(i) + " ");
-            }
-            System.out.println();
+        switch(table.toLowerCase()) {
+            case "accesorio":
+                p = new Accesorio(rs.getInt(1), rs.getFloat(2), rs.getString(3),
+                rs.getString(4), rs.getString(5));
+                break;
+            case "alimento":
+                p = new Alimento(rs.getInt(1), rs.getFloat(2), rs.getString(3),
+                rs.getString(4), rs.getString(5));
+                break;
+            /*case "perro":
+                p = new Alimento(rs.getInt(1), rs.getFloat(2), rs.getString(3),
+                rs.getString(4), rs.getString(5), rs.getString(6));
+                break;
+            case "gato":
+                p = new Alimento(rs.getInt(1), rs.getFloat(2), rs.getString(3),
+                rs.getString(4), rs.getString(5), rs.getString(6));
+                break;
+            case "ave":
+                p = new Alimento(rs.getInt(1), rs.getFloat(2), rs.getString(3),
+                rs.getString(4), rs.getString(5), rs.getString(6));
+                break;*/
+            default: break;
         }
-        return null;
+
+        return p;
     }
 }

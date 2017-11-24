@@ -6,6 +6,9 @@ public abstract class Producto {
     protected float precio;
     protected String descripcion;
 
+    public Producto(){
+    }
+    
     public Producto(int codigo, float precio, String descripcion) {
         this.codigo = codigo;
         this.descripcion = descripcion;

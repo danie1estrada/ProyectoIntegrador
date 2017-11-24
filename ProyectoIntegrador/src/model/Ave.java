@@ -4,8 +4,8 @@ public class Ave extends Animal{
 
 	private String especie;
 
-	public Perro (int codigo, float precio, String descripcion, String tamaño, String color
-		      super(codigo, precio, descripcion, tamaño, color);
+	public Perro (int codigo, float precio, String descripcion, String tam, String color
+		      super(codigo, precio, descripcion, tam, color);
 	              this.especie = especie;
  }
 public String getEspecie(){
@@ -17,4 +17,4 @@ public void setEspecie(String especie){
 @Override 
 public String [] getInfo (){
 return new String []{Integer.toString(codigo), Float.toString(precio),
-descripcion, tamaño, color, especie};
+descripcion, tam, color, especie};

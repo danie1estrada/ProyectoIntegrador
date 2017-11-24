@@ -7,13 +7,13 @@ public abstract class Animal extends Producto{
 
 	public Animal(int codigo, float precio, String descripcion, 
                      super(codigo, precio, descripcion);
-   		     this.tamaño = tamaño;
+   		     this.tam = tam;
 		     this.color = color;
  }
    public String getTamaño(){
-	  return tamaño;
+	  return tam;
  }
-   public void setTamaño(String Tamaño){
+   public void setTam(String Tam){
 	  this.tipo = tipo;
 }
    public String getColor(){
@@ -25,4 +25,4 @@ public void setColor(String color){
   @Override
 public String [] getInfo(){
 	return new String []{Integer.toString(codigo), Float.toString(precio),
-           descripcion, tamaño, color};
+           descripcion, tam, color};

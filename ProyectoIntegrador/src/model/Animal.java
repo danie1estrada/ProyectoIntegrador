@@ -1,28 +1,30 @@
 package model;
 
-public abstract class Animal extends Producto{
+public abstract class Animal extends Producto {
+    
+    protected String tamaño;
+    protected String color;
+    
+    public Animal(int codigo, float precio, String descripcion, String tamaño, String color) {
+        super(codigo, precio, descriction);
+        this.tamaño = tamaño;
+        this.color = color;
+    }
 
-	private String tama�o;
-	private String color;
+    public void setTamaño(String tamaño) {
+        this.tamaño = tamaño;
+    }
 
-	public Animal(int codigo, float precio, String descripcion, 
-                     super(codigo, precio, descripcion);
-   		     this.tam = tam;
-		     this.color = color;
- }
-   public String getTama�o(){
-	  return tam;
- }
-   public void setTam(String Tam){
-	  this.tipo = tipo;
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getTamaño() {
+        return tamaño;
+    }
+
+    public String getColor() {
+        return color;
+    }
+    
 }
-   public String getColor(){
-          return color;
- }
-public void setColor(String color){
-  	this.color = color;
- }
-  @Override
-public String [] getInfo(){
-	return new String []{Integer.toString(codigo), Float.toString(precio),
-           descripcion, tam, color};

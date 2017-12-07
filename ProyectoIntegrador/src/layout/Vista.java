@@ -13,7 +13,7 @@ public class Vista {
 
     private JFrame display;   //Objeto de la clase JFrame 
     private JLabel fondo;   //Objeto de la clase JLabel 
-    private JButton ave, perro, gato;    // Objeto de la clase JButton 
+    private JButton ave, perro, gato, registro;    // Objeto de la clase JButton 
     private JPanel panel;   //contorno de la ventana 
 
     void correr() {
@@ -29,12 +29,13 @@ public class Vista {
         perro = new JButton();
         ave = new JButton();
         gato = new JButton();
+        registro = new JButton();
         panel = new JPanel();
     }
 
     private void armar() {
         display.setSize(1300, 710);
-        display.setIconImage(new ImageIcon("").getImage());// cambio del icono de la taza
+        display.setIconImage(new ImageIcon("src\\layout\\sources\\huella.jpg").getImage());// cambio del icono de la taza
         display.setTitle("venta de mascotas");
         display.setLocationRelativeTo(null); // posicion relativa en la ventana
 
@@ -52,10 +53,14 @@ public class Vista {
         ave.setIcon(new ImageIcon("src\\layout\\sources\\ave.png"));
         ave.addMouseListener(m);
 
+        registro.setIcon(new ImageIcon("src\\layout\\sources\\reg.jpg"));
+        registro.addMouseListener(m);
+        
         fondo.add(perro);
         fondo.add(ave);
         fondo.add(gato);
-
+        fondo.add(registro);
+     
     }
 
     private void desplegar() {
@@ -67,7 +72,7 @@ public class Vista {
 
     private class Mensaje extends MouseAdapter {
 
-        // clase interna de la clase conciencia        
+        // clase interna de la clase vista      
         String mensaje;
 
         @Override
@@ -103,6 +108,13 @@ public class Vista {
                         + "Juguetes y accesorios"
                         + "</html>";
                 ave.setToolTipText(mensaje);
+            }
+            if(me.getSource()== registro){
+                mensaje = "<html>"
+                                 + "registra una nueva mascota,"
+                                 +   "  o producto para su venta"
+                                 + "<html>";
+                registro.setToolTipText(mensaje);
             }
         }
     }

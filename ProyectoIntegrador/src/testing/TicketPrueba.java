@@ -8,6 +8,12 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 
 
+ /**
+ *
+ * @author JuanCollantes666
+ */
+
+ 
 public class TicketPrueba {
 
     static ArrayList<String> CabezaLineas = new ArrayList<String>();
@@ -24,18 +30,18 @@ public class TicketPrueba {
         subCabezaLineas.add(line);
     }
 
-    public static void AddItem(String cantidad, String item, String price) {
+    public static void AddItem(String cantidad, String item, String precio) {
         OrderItem newItem = new OrderItem(' ');
-        items.add(newItem.GeneraItem(cantidad, item, price));
+        items.add(newItem.GeneraItem(cantidad, item, precio));
     }
 
-    public static void AddTotal(String name, String price) {
+    public static void AddTotal(String name, String precio) {
         OrderTotal newTotal = new OrderTotal(' ');
-        totales.add(newTotal.GeneraTotal(name, price));
+        totales.add(newTotal.GeneraTotal(name, precio));
     }
 
-    public static void AddPieLinea(String line) {
-        LineasPie.add(line);
+    public static void AddPieLinea(String linea) {
+        LineasPie.add(linea);
     }
 
     public static String DibujarLinea(int valor) {
@@ -189,7 +195,6 @@ public class TicketPrueba {
             
             ticket.AddSubCabecera("" + fecha.format(date) + " " + hora.format(date));
             ticket.AddSubCabecera(ticket.DarEspacio());
-            
             ticket.AddSubCabecera(ticket.DibujarLinea(29));
             ticket.AddSubCabecera(ticket.DarEspacio());
             
